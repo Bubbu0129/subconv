@@ -1,0 +1,9 @@
+port: 2006
+socks-port: 2024
+allow-lan: true
+mode: rule
+log-level: error
+external-controller: localhost:1984
+external-ui: /opt/yacd/
+dns:
+  enable: false

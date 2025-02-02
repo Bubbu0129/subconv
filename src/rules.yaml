@@ -1,0 +1,7 @@
+rules:
+  # Apple
+  - DOMAIN-SUFFIX,apple.com,🇺🇸
+  # BitzNet
+  - DOMAIN-KEYWORD,bitz,PROXY
+  # Garmin
+  - DOMAIN,www.garmin.com,DIRECT

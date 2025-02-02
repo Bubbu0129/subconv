@@ -1,0 +1,14 @@
+# URLs
+ruleURL="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release"
+ctlURL="http://localhost:1984"
+
+# Configuration
+codes=(HK TW US)
+rulesets=(
+    "private:direct"
+    "google:proxy"
+    "proxy:proxy"
+    "direct:direct"
+    "cncidr:direct"
+    "telegramcidr:proxy"
+)
