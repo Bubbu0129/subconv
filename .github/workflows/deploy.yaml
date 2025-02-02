@@ -1,0 +1,41 @@
+name: Deploy Clash Config
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    
+    steps:
+    
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies (python-yaml)
+        run: sudo apt-get install -y python3-yaml
+
+      - name: Run gen.sh to generate the config
+        env:
+          subURL: ${{ secrets.subURL }}
+        run: |
+          mkdir -p ~/.config/clash
+          chmod +x gen.sh
+          ./gen.sh
+
+      - name: Prepare files for GitHub Pages
+        run: |
+          mkdir -p public
+          cp ~/.config/clash/config.yaml "public/${{ secrets.token }}.yaml"
+          echo -e "User-agent: *\nDisallow: /" > public/robots.txt
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
