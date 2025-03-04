@@ -1,6 +1,6 @@
 port: 2006
 socks-port: 2024
-allow-lan: true
+allow-lan: false
 mode: rule
 log-level: error
 external-controller: localhost:1984
