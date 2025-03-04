@@ -5,3 +5,5 @@ rules:
   - DOMAIN-KEYWORD,bitz,PROXY
   # Garmin
   - DOMAIN,www.garmin.com,DIRECT
+  # NYU
+  - DOMAIN-SUFFIX,nyu.edu,🇹🇼
